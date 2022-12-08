@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_12_03_140050) do
   create_table "admissions", force: :cascade do |t|
+    t.string "condition"
     t.datetime "date"
     t.integer "patient_id"
     t.integer "hospital_id"
