@@ -1,8 +1,8 @@
 class Patient < ApplicationRecord
     validates :name, presence: true
     validates :email, uniqueness: true
-    validates :password_digest, length: {minimum: 8}
-
+    validates :password, length: {minimum: 8}
+    has_secure_password
     has_many :admissions
     has_many :hospitals, through: :admissions
 end
