@@ -21,15 +21,7 @@ class HospitalsController < ApplicationController
             render json: {error: "Hospital not found"}, status: :not_found
         end
     end
-    def destroy
-        hospital = Hospital.find_by(id:params[:id])
-        if hospital
-            hospital.destroy
-            head :no_content
-        else
-            render json: {error: "Hospital not found"}, status: :not_found
-        end
-    end
+   
     private
     def hospital_params
         params.permit(:name, :image_url, :bed_capacity, :beds_available)
