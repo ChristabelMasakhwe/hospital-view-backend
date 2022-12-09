@@ -14,4 +14,6 @@ class SessionsController < ApplicationController
         session.delete :patient_id
         head :no_content
     end
+    private
+    
 end
