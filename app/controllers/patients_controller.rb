@@ -1,7 +1,7 @@
 class PatientsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
     wrap_parameters format:[]
-    
+
     def create
         patient = Patient.create!(patient_params)
         session[:patient_id] = patient.id
@@ -22,4 +22,5 @@ class PatientsController < ApplicationController
     def render_unprocessable_entity(e)
         render json: {error: e.record.errors.full_messages}, status: :unprocessable_entity
     end
+    
 end
