@@ -14,6 +14,7 @@ class PatientsController < ApplicationController
         else
             render json: {error: "Not authorized"}, status: :unauthorized
         end
+        
     end
     private
     def patient_params
